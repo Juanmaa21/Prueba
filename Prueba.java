@@ -7,15 +7,15 @@ public class Prueba{
     public static void main(String[] args){
         ArrayList<Integer> listaNum = generarLista();
         System.out.println(listaNum);
-        System.out.println(mineriaDatos(listaNum));
+        System.out.println("Resultado final: " + mineriaDatos(listaNum));
     }
 
     public static ArrayList<Integer> generarLista(){
         ArrayList<Integer> lista = new ArrayList<>();
-        int longitud = (int) (Math.random()*20+1);
+        int longitud = (int) (Math.random()*30+1);
 
         for (int i = 0; i < longitud; i++) {
-            lista.add((int) (Math.random()*200+1));
+            lista.add((int) (Math.random()*10000+1));
         }
 
         return lista;
@@ -45,7 +45,9 @@ public class Prueba{
 
     public static int mineriaDatos(ArrayList<Integer> numeros){
         int suma = sumarNumeros(numeros);
+        System.out.println("Suma de numeros: " + suma);
         int sumaCifras = sumarCifras(suma);
+        System.out.println("Suma de cifras: " + sumaCifras);
 
         if(sumaCifras == 0){
             return 0;
